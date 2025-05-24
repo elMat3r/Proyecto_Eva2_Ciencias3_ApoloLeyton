@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class Asteroids_Movement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float asteroidSpd;
+    [SerializeField] private Vector3 startPos;
+    [SerializeField] private Vector3 endPos;
 
-    // Update is called once per frame
-    void Update()
+    private float t = 0f;
+    private void Update()
     {
-        
+        //Mathf.Repeat hace un loop del valor t, por lo que nunca sera
+        //mas largo que el Lenght y nunca mas pequeño que 0
+
+        t = Mathf.Repeat(Time.time * asteroidSpd, 1f); //Time.time se utiliza para que el movimiento
+                                                       //dependa del tiempo transcurrido y no por los frames
+        transform.position = Vector3.Lerp(startPos, endPos, t);
     }
 }

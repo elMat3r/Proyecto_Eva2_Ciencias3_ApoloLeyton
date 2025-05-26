@@ -497,6 +497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 600312010}
   - component: {fileID: 600312009}
+  - component: {fileID: 600312011}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -519,8 +520,11 @@ MonoBehaviour:
   moveSpd: 5
   rotationSpd: 200
   radio: 4
+  overlapRadio: 4
   maxDistance: 4
   atractForce: 1
+  pushForce: 10
+  playerPosition: {fileID: 600312010}
   x: 0
   y: 0
   layerMask:
@@ -540,8 +544,30 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 58446025}
+  - {fileID: 1748883790}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &600312011
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600312008}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.989932, y: 1, z: 1}
+  m_Center: {x: 0.49496597, y: 0, z: 0}
 --- !u!1001 &867488068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -557,6 +583,10 @@ PrefabInstance:
     - target: {fileID: 2890403767659513496, guid: 4e38835c775d66d4397c14ead2145394, type: 3}
       propertyPath: endPos.y
       value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890403767659513496, guid: 4e38835c775d66d4397c14ead2145394, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2890403767659513496, guid: 4e38835c775d66d4397c14ead2145394, type: 3}
       propertyPath: startPos.x
@@ -845,6 +875,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e38835c775d66d4397c14ead2145394, type: 3}
+--- !u!1 &1748883789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1748883790}
+  m_Layer: 0
+  m_Name: Spawn_Bullet
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1748883790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748883789}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.89, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 600312010}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905134501
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +1035,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2890403767659513496, guid: 4e38835c775d66d4397c14ead2145394, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3530527209874147736, guid: 4e38835c775d66d4397c14ead2145394, type: 3}
       propertyPath: m_Name
       value: Sphere

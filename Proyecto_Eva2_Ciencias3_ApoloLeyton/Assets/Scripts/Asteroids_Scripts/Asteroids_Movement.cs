@@ -6,7 +6,7 @@ public class Asteroids_Movement : MonoBehaviour
     [SerializeField] private Vector3 startPos;
     [SerializeField] private Vector3 endPos;
 
-    private float t = 0f;
+    private float t = 0f; //t = al tiempo en la formula de Lerp.
     private void Update()
     {
         //Mathf.Repeat hace un loop del valor t, por lo que nunca sera

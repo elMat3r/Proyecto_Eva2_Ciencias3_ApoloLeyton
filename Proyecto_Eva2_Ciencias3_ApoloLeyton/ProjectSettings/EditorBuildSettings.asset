@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: e742ce0563564124f9ad99750ec730bf
+  - enabled: 1
+    path: Assets/Scenes/Gameplay.unity
+    guid: d32c8544c307aa74b9b711d5f118a7d6
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: 9c4397608b36eb341ba7bdc10519e50f
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: e46809e228f9dfb438795a3d2c20b526
+  - enabled: 0
+    path: Assets/Scenes/ChamberTest.unity
+    guid: 358c174515d6a4b449056258beeb413f
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:

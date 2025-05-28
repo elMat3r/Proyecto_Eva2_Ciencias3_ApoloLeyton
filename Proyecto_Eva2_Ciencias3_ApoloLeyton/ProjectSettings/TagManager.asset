@@ -3,12 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Asteroide
+  - Bullet
+  - Asteroide Mediano
+  - Asteroide Grande
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Meteor
   - Water
   - UI
   - Asteroid

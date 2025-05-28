@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet_Script : MonoBehaviour
+public class SceneManager_Script : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

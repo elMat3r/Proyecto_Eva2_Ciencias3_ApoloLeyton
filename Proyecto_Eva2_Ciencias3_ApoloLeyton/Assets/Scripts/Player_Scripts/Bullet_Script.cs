@@ -8,17 +8,4 @@ public class Bullet_Script : MonoBehaviour
     {
         Destroy(gameObject, life);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Asteroide Grande"))
-        {
-            Destroy(other.gameObject);
-            Destroy(gameObject);
-        }
-        if (other.CompareTag("Asteroide Mediano"))
-        {
-            Destroy(other.gameObject);
-            Destroy(gameObject);
-        }
-    }
 }

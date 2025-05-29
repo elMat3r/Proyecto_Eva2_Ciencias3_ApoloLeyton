@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Asteroide
-  - Bullet
   - Asteroide Mediano
   - Asteroide Grande
+  - Bullet
+  - Meteorito
   layers:
   - Default
   - TransparentFX

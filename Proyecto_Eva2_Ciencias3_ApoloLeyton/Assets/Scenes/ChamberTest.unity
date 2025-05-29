@@ -374,8 +374,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600312010}
-  - component: {fileID: 600312009}
   - component: {fileID: 600312011}
+  - component: {fileID: 600312009}
+  - component: {fileID: 600312012}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -397,15 +398,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpd: 5
   rotationSpd: 200
-  radio: 5
-  maxDistance: 5
-  coneLimit: 6
-  atractForce: 1
+  radio: 6
+  maxDistance: 6
+  coneLimit: 80
+  atractForce: 6
   meteorLayerMask:
     serializedVersion: 2
     m_Bits: 8
   overlapRadio: 5
-  pushForce: 10
+  pushForce: 20
   asteroidLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -451,8 +452,20 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.989932, y: 1, z: 1}
-  m_Center: {x: 0.49496597, y: 0, z: 0}
+  m_Size: {x: 2.3164554, y: 1.2374709, z: 1}
+  m_Center: {x: 0.4949658, y: 0.00000011920929, z: 0}
+--- !u!114 &600312012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600312008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b6bcca19992924b8d6c53630a5cef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &707454316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -853,7 +866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3988461239573604148, guid: d218df1fc8c6a7c4996f204aa3137b73, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.314867
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: 3988461239573604148, guid: d218df1fc8c6a7c4996f204aa3137b73, type: 3}
       propertyPath: m_LocalPosition.z

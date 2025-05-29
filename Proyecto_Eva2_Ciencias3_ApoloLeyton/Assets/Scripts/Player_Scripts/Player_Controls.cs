@@ -76,7 +76,8 @@ public class Player_Controls : MonoBehaviour
             Rigidbody rb = hitsColliders[i].attachedRigidbody;
             //hitsColliders[i].transform.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f);
             Vector3 dir = hitsColliders[i].transform.position - playerPosition.position;
-            rb.AddForce(dir.normalized * 1 / dir.magnitude * pushForce, ForceMode.Impulse);
+            //rb.AddForce(dir.normalized * 1 / dir.magnitude * pushForce, ForceMode.Impulse);
+            rb.AddForce(dir.normalized * pushForce, ForceMode.Impulse);
         }
     }
     private void Shoot()
@@ -89,10 +90,14 @@ public class Player_Controls : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Asteroide"))
+        if (other.CompareTag("Asteroide Grande") || other.CompareTag("Asteroide Mediano"))
         {
             Destroy(gameObject);
         }
+    }
+    private void OnDestroy()
+    {
+        
     }
     private void OnDrawGizmos()
     {

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Meteorito_Script : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Player"))
+        if(collision.collider.tag == "Player")
         {
             Destroy(gameObject);
         }

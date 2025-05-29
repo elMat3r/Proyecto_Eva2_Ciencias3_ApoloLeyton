@@ -27,6 +27,7 @@ public class Player_Controls : MonoBehaviour
     [Header("Others")]
     [SerializeField] private Transform playerPosition;
     public float x, y;
+    [SerializeField] SceneManager_Script sceneManager;
     void Update()
     {
         //----Movimiento----//
@@ -93,6 +94,7 @@ public class Player_Controls : MonoBehaviour
         if (other.CompareTag("Asteroide Grande") || other.CompareTag("Asteroide Mediano"))
         {
             Destroy(gameObject);
+            sceneManager.Lose();
         }
     }
     private void OnDestroy()

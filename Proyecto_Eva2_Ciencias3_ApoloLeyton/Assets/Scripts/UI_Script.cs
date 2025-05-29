@@ -8,23 +8,19 @@ public class UI_Script : MonoBehaviour
 {
     [Header("Elementos de UI")]
     [SerializeField] private TextMeshProUGUI textPoints;
-    [SerializeField] private Image playerHealthImage;
+    //[SerializeField] private Image playerHealthImage;
     public float meteorCounts;
 
     [Header("Otras Clases")]
-    public Player_Health playerHealthScript;
+    //public Player_Health playerHealthScript;
     public SceneManager_Script sceneManager;
     void Update()
     {
         textPoints.text = "Recolected Meteors: " + meteorCounts;
-        playerHealthImage.fillAmount = playerHealthScript.health;
-        if(meteorCounts >= 12)
+        //playerHealthImage.fillAmount = playerHealthScript.health;
+        if(meteorCounts >= 50)
         {
             sceneManager.Victory();
-        }
-        if(playerHealthImage.fillAmount <= 0)
-        {
-            sceneManager.Lose();
         }
     }
 }

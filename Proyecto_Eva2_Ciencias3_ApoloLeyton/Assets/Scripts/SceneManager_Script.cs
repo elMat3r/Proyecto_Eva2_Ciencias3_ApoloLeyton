@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManager_Script : MonoBehaviour
 {
-    public void Empezar()
+    public void Gameplay()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
     }

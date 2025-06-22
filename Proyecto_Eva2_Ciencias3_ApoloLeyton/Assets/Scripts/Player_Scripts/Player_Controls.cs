@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_Controls : MonoBehaviour
@@ -24,13 +26,16 @@ public class Player_Controls : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletSpd;
 
+    [Header("Queue")]
+    public float maxTime;
+    private Queue<KeyCode> myQueue = new Queue<KeyCode>();
+
     [Header("Others")]
     [SerializeField] private Transform playerPosition;
     public float x, y;
     [SerializeField] SceneManager_Script sceneManager;
     void Update()
     {
-        //----Movimiento----//
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
 
@@ -43,11 +48,10 @@ public class Player_Controls : MonoBehaviour
         }
         VacuumSystem();
         Shoot();
+        QueueList();
     }
     public void VacuumSystem()
     {
-        //----SphereCast----//
-
         if (Input.GetKey(KeyCode.Space))
         {
             Ray ray = new Ray(transform.position, transform.forward);
@@ -69,15 +73,11 @@ public class Player_Controls : MonoBehaviour
     }
     public void RepulsionSystem(Vector3 center, float ratio, LayerMask layerMask)
     {
-        //-------Overlap------//
-
         Collider[] hitsColliders = Physics.OverlapSphere(center, ratio, layerMask);
         for (int i = 0; i < hitsColliders.Length; i++)
         {
             Rigidbody rb = hitsColliders[i].attachedRigidbody;
-            //hitsColliders[i].transform.GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f);
             Vector3 dir = hitsColliders[i].transform.position - playerPosition.position;
-            //rb.AddForce(dir.normalized * 1 / dir.magnitude * pushForce, ForceMode.Impulse);
             rb.AddForce(dir.normalized * pushForce, ForceMode.Impulse);
         }
     }
@@ -97,6 +97,50 @@ public class Player_Controls : MonoBehaviour
             sceneManager.Lose();
         }
     }
+    void QueueList()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            myQueue.Enqueue(KeyCode.UpArrow);
+            WordCreation();
+            Invoke("EliminateFromList", maxTime);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            myQueue.Enqueue(KeyCode.RightArrow);
+            WordCreation();
+            Invoke("EliminateFromList", maxTime);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            myQueue.Enqueue(KeyCode.DownArrow);
+            WordCreation();
+            Invoke("EliminateFromList", maxTime);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            myQueue.Enqueue(KeyCode.LeftArrow);
+            WordCreation();
+            Invoke("EliminateFromList", maxTime);
+        }
+    }
+    void EliminateFromList()
+    {
+        myQueue.Dequeue();
+    }
+    private void WordCreation()
+    {
+        string newWord = null;
+        foreach (KeyCode key in myQueue)
+        {
+            newWord += key.ToString();
+        }
+        print(newWord);
+        if (newWord == "UpArrowRightArrowDownArrowLeftArrow")
+        {
+            Debug.Log("Se logro");
+        }
+    }
     private void OnDestroy()
     {
         
@@ -107,13 +151,4 @@ public class Player_Controls : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, maxDistance);
     }
 
-    //IEnumerator Shooting()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.X))
-    //    {
-    //        var bullet = Instantiate(bulletPrefab, spawnBullet.position, spawnBullet.rotation);
-    //        bullet.GetComponent<Rigidbody>().linearVelocity = spawnBullet.right * bulletSpd;
-    //        yield return new WaitForSeconds(1);
-    //    }
-    //}
 }

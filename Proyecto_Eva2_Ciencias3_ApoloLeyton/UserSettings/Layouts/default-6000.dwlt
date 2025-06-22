@@ -1248,7 +1248,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/BlackHole_Scripts
+    - Assets/Scripts/Player_Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1258,16 +1258,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/BlackHole_Scripts
+  - Assets/Scripts/Player_Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\leyme\OneDrive\Documentos\GitHub\Proyecto_Eva2_Ciencias3_ApoloLeyton\Proyecto_Eva2_Ciencias3_ApoloLeyton
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 8ea80000
-    m_LastClickedID: 43150
-    m_ExpandedIDs: 000000005ea6000046a8000000ca9a3b
+    m_SelectedIDs: 64a80000
+    m_LastClickedID: 43108
+    m_ExpandedIDs: 000000006ea6000056a8000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1296,7 +1296,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005ea60000
+    m_ExpandedIDs: 000000006ea60000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1428,7 +1428,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 42388
+  m_LastSelectedObjectID: -1292
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52

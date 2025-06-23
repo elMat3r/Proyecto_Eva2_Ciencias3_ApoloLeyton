@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 3741338331205279582}
   - component: {fileID: 8482428799435989402}
   - component: {fileID: 8273338857616952624}
-  - component: {fileID: 1002054234765814329}
+  - component: {fileID: 8658482272038816366}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -234,6 +234,7 @@ MonoBehaviour:
   spawnBullet: {fileID: 5088596407042880793}
   bulletPrefab: {fileID: 1984397299289178299, guid: e2e96e875990aad418e4347e34f0cafb, type: 3}
   bulletSpd: 15
+  maxTime: 0
   playerPosition: {fileID: 284254215376919861}
   x: 0
   y: 0
@@ -264,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b6bcca19992924b8d6c53630a5cef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1002054234765814329
+--- !u!114 &8658482272038816366
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,6 +274,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5313409787197241327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d36c1dea22a8654ca2ec91466e1ab8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 505677765ff3be445ac6ea549e796b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viscocity: 5
+  rb: {fileID: 5874280007613277651}

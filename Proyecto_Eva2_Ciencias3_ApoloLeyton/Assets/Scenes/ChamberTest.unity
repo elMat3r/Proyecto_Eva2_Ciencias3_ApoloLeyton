@@ -238,12 +238,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 37400050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 505677765ff3be445ac6ea549e796b85, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d36c1dea22a8654ca2ec91466e1ab8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upthrust: 10
-  viscocity: 1
-  rb: {fileID: 1329675244}
 --- !u!1 &308527892
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,9 +426,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1002054234765814329, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5313409787197241327, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502884109827615578, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5874280007613277651, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
       propertyPath: m_IsKinematic
@@ -568,11 +573,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27e799814e81d1546b199a8d240c6d79, type: 3}
---- !u!54 &1329675244 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 5874280007613277651, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
-  m_PrefabInstance: {fileID: 643554218}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1905134501
 GameObject:
   m_ObjectHideFlags: 0

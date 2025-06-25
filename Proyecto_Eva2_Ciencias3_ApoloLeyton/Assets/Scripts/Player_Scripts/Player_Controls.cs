@@ -32,7 +32,7 @@ public class Player_Controls : MonoBehaviour
 
     [Header("Others")]
     [SerializeField] private Transform playerPosition;
-    public float x, y;
+    [HideInInspector] public float x, y;
     [SerializeField] SceneManager_Script sceneManager;
     void Update()
     {
@@ -140,10 +140,6 @@ public class Player_Controls : MonoBehaviour
         {
             Debug.Log("Se logro");
         }
-    }
-    private void OnDestroy()
-    {
-        
     }
     private void OnDrawGizmos()
     {

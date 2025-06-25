@@ -7,7 +7,7 @@ public class BlackHole_Function : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     public void BlackHolePhysics()
     {
-        //rb.AddForce(Vector3.positiveInfinity * upthrust);
+        //rb.AddForce(transform.position * upthrust);
         rb.AddForce(-rb.linearVelocity * viscocity);
     }
 }

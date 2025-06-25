@@ -9,6 +9,7 @@ TagManager:
   - Asteroide Grande
   - Bullet
   - Meteorito
+  - Black Hole
   layers:
   - Default
   - TransparentFX

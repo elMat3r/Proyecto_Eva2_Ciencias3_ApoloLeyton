@@ -34,6 +34,7 @@ public class Player_Controls : MonoBehaviour
     [SerializeField] private Transform playerPosition;
     [HideInInspector] public float x, y;
     [SerializeField] SceneManager_Script sceneManager;
+    private Rigidbody rb;
     void Update()
     {
         x = Input.GetAxis("Horizontal");
@@ -41,11 +42,6 @@ public class Player_Controls : MonoBehaviour
 
         transform.Rotate(0, 0, y * Time.deltaTime * rotationSpd);
         transform.Translate(x * Time.deltaTime * moveSpd, 0, 0);
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            RepulsionSystem(playerPosition.position, radio, asteroidLayerMask);
-        }
         VacuumSystem();
         Shoot();
         QueueList();
@@ -89,7 +85,7 @@ public class Player_Controls : MonoBehaviour
             bullet.GetComponent<Rigidbody>().linearVelocity = spawnBullet.right * bulletSpd;
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Asteroide Grande") || other.CompareTag("Asteroide Mediano"))
         {
@@ -138,6 +134,7 @@ public class Player_Controls : MonoBehaviour
         print(newWord);
         if (newWord == "UpArrowRightArrowDownArrowLeftArrow")
         {
+            RepulsionSystem(playerPosition.position, radio, asteroidLayerMask);
             Debug.Log("Se logro");
         }
     }
@@ -146,5 +143,4 @@ public class Player_Controls : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, maxDistance);
     }
-
 }

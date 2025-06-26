@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player_Controls : MonoBehaviour
@@ -30,11 +31,14 @@ public class Player_Controls : MonoBehaviour
     public float maxTime;
     private Queue<KeyCode> myQueue = new Queue<KeyCode>();
 
+    [Header("CoyoteTime")]
+    [SerializeField] private float coyoteTime;
+    private bool isPlayerInside;
+
     [Header("Others")]
     [SerializeField] private Transform playerPosition;
     [HideInInspector] public float x, y;
     [SerializeField] SceneManager_Script sceneManager;
-    private Rigidbody rb;
     void Update()
     {
         x = Input.GetAxis("Horizontal");
@@ -89,9 +93,34 @@ public class Player_Controls : MonoBehaviour
     {
         if (other.CompareTag("Asteroide Grande") || other.CompareTag("Asteroide Mediano"))
         {
-            Destroy(gameObject);
-            sceneManager.Lose();
+            if(!isPlayerInside)
+            {
+                isPlayerInside = true;
+                StartCoroutine(SafeTimeShip());
+            }
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Asteroide Grande") || other.CompareTag("Asteroide Mediano"))
+        {
+            isPlayerInside = false;
+        }
+    }
+    IEnumerator SafeTimeShip()
+    {
+        float coyoteTimeCounter = 0f;
+        while(coyoteTimeCounter < coyoteTime)
+        {
+            if(!isPlayerInside)
+            {
+                yield break;
+            }
+            coyoteTimeCounter += Time.deltaTime;
+            yield return null;
+        }
+        Destroy(gameObject);
+        sceneManager.Lose();
     }
     void QueueList()
     {

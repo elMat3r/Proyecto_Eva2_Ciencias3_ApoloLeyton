@@ -1,32 +1,48 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Health : MonoBehaviour
 {
-    //[Header("Life")]
-    //public float health;
-    //[SerializeField] private float maxHealth = 3;
+    [Header("Life")]
+    public Image barLife;
+    private int maxLives = 3;
+    private int currentLife;
 
     [Header("Otra Clase")]
     [SerializeField] private UI_Script uiScript;
     public SceneManager_Script sceneManager;
-    //void Start()
-    //{
-    //    health = maxHealth;
-    //}
-    //public void Health()
-    //{
-    //    health -= 1;
-    //}
+    public int CurrentLife
+    {
+        get { return currentLife; }
+        set { currentLife = Mathf.Clamp(value, 0, maxLives);
+            HealthUpdated();
+            if(currentLife <= 0)
+            {
+                sceneManager.Lose();
+            }
+        }
+    }
+    private void Start()
+    {
+        currentLife = maxLives;
+        HealthUpdated();
+    }
+    void HealthUpdated()
+    {
+        if(barLife != null)
+        {
+            barLife.fillAmount = (float)currentLife/maxLives;
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Meteorito")
+        if(collision.collider.CompareTag("Meteorito"))
         {
             uiScript.meteorCounts++;
         }
-        //if(collision.collider.tag == "Asteroide Grande" ||  collision.collider.tag == "Asteroide Mediano")
-        //{
-        //    Health();
-        //    sceneManager.Lose();
-        //}
+        else if(collision.collider.CompareTag("Asteroide Grande")|| collision.collider.CompareTag("Asteroide Mediano"))
+        {
+            CurrentLife--;
+        }
     }
 }

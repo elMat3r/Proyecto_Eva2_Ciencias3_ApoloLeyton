@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2890403767659513496}
   - component: {fileID: -144093826460477060}
   - component: {fileID: 6539501819243689652}
+  - component: {fileID: 2707712843576687121}
   - component: {fileID: 4825130668437937145}
   m_Layer: 6
   m_Name: Asteroide Grande
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8ecd1e824ea3e48ab5d0ba23feae3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidSpd: 10
+  asteroidSpd: 8
 --- !u!114 &-144093826460477060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +126,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b6bcca19992924b8d6c53630a5cef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2707712843576687121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3530527209874147736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505677765ff3be445ac6ea549e796b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viscocity: 1
+  rb: {fileID: 4277537325329481747}
 --- !u!212 &4825130668437937145
 SpriteRenderer:
   m_ObjectHideFlags: 0

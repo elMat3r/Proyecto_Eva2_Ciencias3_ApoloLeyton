@@ -36,6 +36,8 @@ public class Player_Controls : MonoBehaviour
     private bool isPlayerInside;
 
     [Header("Others")]
+    [SerializeField] private Transform spawnBlackHole;
+    [SerializeField] private GameObject blackHolePrefab;
     [SerializeField] private Transform playerPosition;
     [HideInInspector] public float x, y;
     [SerializeField] SceneManager_Script sceneManager;
@@ -46,6 +48,10 @@ public class Player_Controls : MonoBehaviour
 
         transform.Rotate(0, 0, y * Time.deltaTime * rotationSpd);
         transform.Translate(x * Time.deltaTime * moveSpd, 0, 0);
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            RepulsionSystem(playerPosition.position, radio, asteroidLayerMask);
+        }
         VacuumSystem();
         Shoot();
         QueueList();
@@ -89,6 +95,10 @@ public class Player_Controls : MonoBehaviour
             bullet.GetComponent<Rigidbody>().linearVelocity = spawnBullet.right * bulletSpd;
         }
     }
+    private void BlackHoleInstance()
+    {
+        var blackHole = Instantiate(blackHolePrefab, spawnBlackHole.position, Quaternion.identity);
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Asteroide Grande") || other.CompareTag("Asteroide Mediano"))
@@ -124,27 +134,15 @@ public class Player_Controls : MonoBehaviour
     }
     void QueueList()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            myQueue.Enqueue(KeyCode.UpArrow);
+            myQueue.Enqueue(KeyCode.C);
             WordCreation();
             Invoke("EliminateFromList", maxTime);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.V))
         {
-            myQueue.Enqueue(KeyCode.RightArrow);
-            WordCreation();
-            Invoke("EliminateFromList", maxTime);
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            myQueue.Enqueue(KeyCode.DownArrow);
-            WordCreation();
-            Invoke("EliminateFromList", maxTime);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            myQueue.Enqueue(KeyCode.LeftArrow);
+            myQueue.Enqueue(KeyCode.V);
             WordCreation();
             Invoke("EliminateFromList", maxTime);
         }
@@ -161,9 +159,9 @@ public class Player_Controls : MonoBehaviour
             newWord += key.ToString();
         }
         print(newWord);
-        if (newWord == "UpArrowRightArrowDownArrowLeftArrow")
+        if (newWord == "CVC")
         {
-            RepulsionSystem(playerPosition.position, radio, asteroidLayerMask);
+            BlackHoleInstance();
             Debug.Log("Se logro");
         }
     }

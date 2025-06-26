@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9189485764915890868}
   - component: {fileID: 4396029399937398959}
   - component: {fileID: 8296079743632591586}
+  - component: {fileID: 302823566053978658}
   - component: {fileID: -7362139146211850768}
   m_Layer: 6
   m_Name: Asteroid Mediano
@@ -111,6 +112,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b6bcca19992924b8d6c53630a5cef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &302823566053978658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5832082795042271619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505677765ff3be445ac6ea549e796b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viscocity: 1
+  rb: {fileID: 9189485764915890868}
 --- !u!212 &-7362139146211850768
 SpriteRenderer:
   m_ObjectHideFlags: 0

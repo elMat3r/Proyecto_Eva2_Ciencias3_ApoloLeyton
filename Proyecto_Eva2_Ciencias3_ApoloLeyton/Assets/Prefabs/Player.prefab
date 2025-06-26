@@ -87,6 +87,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3160312739618554871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4777657381951964149}
+  m_Layer: 0
+  m_Name: Spawn_BlackHole
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4777657381951964149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3160312739618554871}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 284254215376919861}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3749815290657005423
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,6 +184,7 @@ Transform:
   m_Children:
   - {fileID: 2863708757710958203}
   - {fileID: 5088596407042880793}
+  - {fileID: 4777657381951964149}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5502884109827615578
@@ -206,6 +238,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1984397299289178299, guid: e2e96e875990aad418e4347e34f0cafb, type: 3}
   bulletSpd: 15
   maxTime: 0
+  coyoteTime: 0
+  spawnBlackHole: {fileID: 0}
+  blackHolePrefab: {fileID: 0}
   playerPosition: {fileID: 284254215376919861}
   x: 0
   y: 0
@@ -222,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ecbe40c5b89114cafdac1eb43b2e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barLife: {fileID: 0}
   uiScript: {fileID: 0}
   sceneManager: {fileID: 0}
 --- !u!114 &8273338857616952624

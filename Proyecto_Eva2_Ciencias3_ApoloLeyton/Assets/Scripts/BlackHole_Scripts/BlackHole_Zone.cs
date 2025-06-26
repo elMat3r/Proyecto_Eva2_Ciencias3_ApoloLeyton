@@ -9,5 +9,9 @@ public class BlackHole_Zone : MonoBehaviour
         {
             blackHole_Function.BlackHolePhysics();
         }
+        if(other.CompareTag("Asteroide Grande") && other.CompareTag("Asteroide Mediano"))
+        {
+            other.GetComponent<Rigidbody>().useGravity = true;
+        }
     }
 }

@@ -400,7 +400,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPoints: {fileID: 70605}
   meteorCounts: 0
+  healthBar: {fileID: 1817054937}
   sceneManager: {fileID: 498360755}
+  playerHealth: {fileID: 1320540313}
 --- !u!1001 &897421102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -643,6 +645,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1320540313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8482428799435989402, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
+  m_PrefabInstance: {fileID: 4679111818278459287}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ecbe40c5b89114cafdac1eb43b2e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1412304450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,7 +1302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3741338331205279582, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
       propertyPath: maxTime
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3741338331205279582, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
       propertyPath: coyoteTime
@@ -1299,6 +1312,14 @@ PrefabInstance:
       propertyPath: sceneManager
       value: 
       objectReference: {fileID: 498360755}
+    - target: {fileID: 3741338331205279582, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
+      propertyPath: spawnBlackHole
+      value: 
+      objectReference: {fileID: 4679111818278459288}
+    - target: {fileID: 3741338331205279582, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
+      propertyPath: blackHolePrefab
+      value: 
+      objectReference: {fileID: 1332065104791776144, guid: 55505153cc2d549428438aa03694579f, type: 3}
     - target: {fileID: 5313409787197241327, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1312,6 +1333,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 498360756}
     - target: {fileID: 8482428799435989402, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
+      propertyPath: maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8482428799435989402, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
       propertyPath: sceneManager
       value: 
       objectReference: {fileID: 498360755}
@@ -1320,6 +1345,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
+--- !u!4 &4679111818278459288 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4777657381951964149, guid: 062821ef8fc77664ea872b5c6a35e8d4, type: 3}
+  m_PrefabInstance: {fileID: 4679111818278459287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5433570720037835671
 PrefabInstance:
   m_ObjectHideFlags: 0
